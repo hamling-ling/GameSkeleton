@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VuN-r8-8vA">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="y2V-vp-7H2">
+            <objects>
+                <viewController id="VuN-r8-8vA" customClass="HomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RPT-Fl-rQ8" customClass="GLKView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyP-tU-Bs8">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="play">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="modal" id="uXv-Lb-D86"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfB-1d-o7R">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="about">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="m36-Se-Km2" kind="modal" id="W5B-C1-stG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cyP-tU-Bs8" firstAttribute="top" secondItem="RPT-Fl-rQ8" secondAttribute="top" constant="224" id="Ivv-6J-Mtm"/>
+                            <constraint firstAttribute="trailing" secondItem="VfB-1d-o7R" secondAttribute="trailing" constant="34" id="TOR-Aq-ElZ"/>
+                            <constraint firstAttribute="bottom" secondItem="VfB-1d-o7R" secondAttribute="bottom" constant="12" id="fid-nP-wa1"/>
+                            <constraint firstItem="cyP-tU-Bs8" firstAttribute="leading" secondItem="RPT-Fl-rQ8" secondAttribute="leading" constant="111" id="rAH-9U-vTY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lut-uJ-QC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="106"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="GameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3" customClass="GLKView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dh3-ZY-fnu">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="XoD-QX-YaO"/>
+                                    <constraint firstAttribute="width" constant="32" id="hyM-j9-0Nh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="delete.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VuN-r8-8vA" kind="modal" id="os2-ZN-paw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dh3-ZY-fnu" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="QhZ-Vn-Rzo"/>
+                            <constraint firstAttribute="trailing" secondItem="Dh3-ZY-fnu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mXH-4i-AWt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="554" y="-127"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uY4-eL-xpn">
+            <objects>
+                <viewController id="m36-Se-Km2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y5T-F7-WDH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ZK-on-YzW">
+                                <items>
+                                    <navigationItem title="Title" id="Zdz-IV-t77">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Mpy-cy-6Nb">
+                                            <connections>
+                                                <segue destination="VuN-r8-8vA" kind="modal" id="xz9-vx-KQv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4ZK-on-YzW" firstAttribute="top" secondItem="y5T-F7-WDH" secondAttribute="top" type="default" id="7g3-X8-fnW"/>
+                            <constraint firstItem="4ZK-on-YzW" firstAttribute="trailing" secondItem="y5T-F7-WDH" secondAttribute="trailing" type="default" id="SZv-mf-Jdq"/>
+                            <constraint firstItem="4ZK-on-YzW" firstAttribute="leading" secondItem="y5T-F7-WDH" secondAttribute="leading" type="default" id="wjO-bo-hlA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLd-hV-loc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="554" y="510"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="delete.png" width="50" height="50"/>
+    </resources>
+    <classes>
+        <class className="BaseGameViewController" superclassName="GLKViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseGameViewController.h"/>
+        </class>
+        <class className="ClickableImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClickableImageView.h"/>
+        </class>
+        <class className="GameViewController" superclassName="BaseGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="btnGoBack" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imgLeftTouch" candidateClass="TouchImage"/>
+                <relationship kind="outlet" name="imgRightTouch" candidateClass="TouchImage"/>
+                <relationship kind="outlet" name="lblBonus" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblEarned" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblStatus" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreViewController" candidateClass="ScoreViewController"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="BaseGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="btnAbout" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnStage1" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ScoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScoreViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblFlag" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblGrade" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblTotal" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TouchImage" superclassName="ClickableImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TouchImage.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <nil key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="xz9-vx-KQv"/>
+    </inferredMetricsTieBreakers>
+</document>
