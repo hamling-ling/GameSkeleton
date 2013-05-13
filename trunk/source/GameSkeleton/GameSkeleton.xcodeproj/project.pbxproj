@@ -33,7 +33,6 @@
 		310A94F8174134E600E1ACC2 /* SittingGlModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 310A94C9174134E600E1ACC2 /* SittingGlModel.m */; };
 		310A94F9174134E600E1ACC2 /* ground_pine.png in Resources */ = {isa = PBXBuildFile; fileRef = 310A94CB174134E600E1ACC2 /* ground_pine.png */; };
 		310A94FA174134E600E1ACC2 /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = 310A94CC174134E600E1ACC2 /* room.png */; };
-		310A94FB174134E600E1ACC2 /* tex_peko.png in Resources */ = {isa = PBXBuildFile; fileRef = 310A94CD174134E600E1ACC2 /* tex_peko.png */; };
 		310A94FC174134E600E1ACC2 /* Background.mm in Sources */ = {isa = PBXBuildFile; fileRef = 310A94D5174134E600E1ACC2 /* Background.mm */; };
 		310A94FD174134E600E1ACC2 /* GlBasePresentee.mm in Sources */ = {isa = PBXBuildFile; fileRef = 310A94D7174134E600E1ACC2 /* GlBasePresentee.mm */; };
 		310A94FE174134E600E1ACC2 /* Ground.mm in Sources */ = {isa = PBXBuildFile; fileRef = 310A94D9174134E600E1ACC2 /* Ground.mm */; };
@@ -88,11 +87,9 @@
 		310A94C9174134E600E1ACC2 /* SittingGlModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SittingGlModel.m; sourceTree = "<group>"; };
 		310A94CB174134E600E1ACC2 /* ground_pine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground_pine.png; sourceTree = "<group>"; };
 		310A94CC174134E600E1ACC2 /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = room.png; sourceTree = "<group>"; };
-		310A94CD174134E600E1ACC2 /* tex_peko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tex_peko.png; sourceTree = "<group>"; };
 		310A94CF174134E600E1ACC2 /* Vertex_Grd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex_Grd.h; sourceTree = "<group>"; };
 		310A94D0174134E600E1ACC2 /* Vertex_Mtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex_Mtn.h; sourceTree = "<group>"; };
 		310A94D1174134E600E1ACC2 /* Vertex_Mto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex_Mto.h; sourceTree = "<group>"; };
-		310A94D2174134E600E1ACC2 /* Vertex_Peko.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex_Peko.h; sourceTree = "<group>"; };
 		310A94D4174134E600E1ACC2 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
 		310A94D5174134E600E1ACC2 /* Background.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Background.mm; sourceTree = "<group>"; };
 		310A94D6174134E600E1ACC2 /* GlBasePresentee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlBasePresentee.h; sourceTree = "<group>"; };
@@ -257,7 +254,6 @@
 			children = (
 				310A94CB174134E600E1ACC2 /* ground_pine.png */,
 				310A94CC174134E600E1ACC2 /* room.png */,
-				310A94CD174134E600E1ACC2 /* tex_peko.png */,
 			);
 			path = Texture;
 			sourceTree = "<group>";
@@ -268,7 +264,6 @@
 				310A94CF174134E600E1ACC2 /* Vertex_Grd.h */,
 				310A94D0174134E600E1ACC2 /* Vertex_Mtn.h */,
 				310A94D1174134E600E1ACC2 /* Vertex_Mto.h */,
-				310A94D2174134E600E1ACC2 /* Vertex_Peko.h */,
 			);
 			path = Vertex;
 			sourceTree = "<group>";
@@ -381,7 +376,6 @@
 				310A94F1174134E600E1ACC2 /* data.plist in Resources */,
 				310A94F9174134E600E1ACC2 /* ground_pine.png in Resources */,
 				310A94FA174134E600E1ACC2 /* room.png in Resources */,
-				310A94FB174134E600E1ACC2 /* tex_peko.png in Resources */,
 				310A9503174134E600E1ACC2 /* delete.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
