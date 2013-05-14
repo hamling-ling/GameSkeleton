@@ -22,7 +22,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2" kind="modal" id="uXv-Lb-D86"/>
+                                    <segue destination="2" kind="modal" identifier="HomeToGame" id="uXv-Lb-D86"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfB-1d-o7R">
@@ -125,56 +125,12 @@
     <resources>
         <image name="delete.png" width="50" height="50"/>
     </resources>
-    <classes>
-        <class className="BaseGameViewController" superclassName="GLKViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseGameViewController.h"/>
-        </class>
-        <class className="ClickableImageView" superclassName="UIImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ClickableImageView.h"/>
-        </class>
-        <class className="GameViewController" superclassName="BaseGameViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="btnGoBack" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imgLeftTouch" candidateClass="TouchImage"/>
-                <relationship kind="outlet" name="imgRightTouch" candidateClass="TouchImage"/>
-                <relationship kind="outlet" name="lblBonus" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblEarned" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblStatus" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scoreViewController" candidateClass="ScoreViewController"/>
-            </relationships>
-        </class>
-        <class className="HomeViewController" superclassName="BaseGameViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="btnAbout" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="btnStage1" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ScoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScoreViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="lblFlag" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblGrade" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblTime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblTotal" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TouchImage" superclassName="ClickableImageView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TouchImage.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xz9-vx-KQv"/>
+        <segue reference="os2-ZN-paw"/>
     </inferredMetricsTieBreakers>
 </document>

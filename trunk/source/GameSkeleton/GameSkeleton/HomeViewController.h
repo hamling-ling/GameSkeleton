@@ -1,6 +1,6 @@
 //
 //  HomeViewController.h
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by nobu on 13/05/13.
 //  Copyright (c) 2013年 Nobuhiro Kuroiwa. All rights reserved.

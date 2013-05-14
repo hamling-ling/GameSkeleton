@@ -1,6 +1,6 @@
 //
 //  DataCluster.h
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwa on 10/09/04.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.

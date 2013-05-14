@@ -1,6 +1,6 @@
 //
 //  GlGamePresenter.m
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwa on 12/03/20.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
@@ -11,6 +11,8 @@
 #import "CommonUtility.h"
 #import "GroundPine.h"
 #import "LivingRoom.h"
+#import "Player.h"
+#import "DemoPlayer.h"
 #include <vector>
 
 const NSString* GlGameLock = @"GlGameLock";
@@ -30,6 +32,8 @@ typedef enum GAMESTATE
 {
     Ground *_ground;
     Background *_background;
+    Player *_player;
+    
     NSTimeInterval time;
     int bonus;
     int _stage;
@@ -70,23 +74,31 @@ typedef enum GAMESTATE
 
     _stage = stage;
     NSMutableArray* arr = [NSMutableArray arrayWithObjects: nil];
-    _ground = [[GroundPine alloc] init];
-    _background = [[LivingRoom alloc] init];
+    if(_stage == 0) {
+        _ground = [[GroundPine alloc] init];
+        _background = [[LivingRoom alloc] init];
+        _player = [[DemoPlayer alloc] init];
+    }
+    else {
+        _ground = [[GroundPine alloc] init];
+        _background = [[LivingRoom alloc] init];
+        _player = [[Player alloc] init];
+    }
     
     [arr addObject:_ground];
     [arr addObject:_background];
+    [arr addObject:_player];
     
-    if(_ground)
-        [_ground setupGLWithBaseModelViewMatPtr:&_baseModelViewMatrix];
-    if(_background)
-        [_background setupGLWithBaseModelViewMatPtr:&_baseModelViewMatrix];
+    for(GlBasePresentee* tee in arr) {
+        [tee setupGLWithBaseModelViewMatPtr:&_baseModelViewMatrix];
+    }
     
     self.presentees = arr;
 
     // inint sound engine
     [self setupAL];
 
-    // init ski engine
+    // init something else
 }
 
 - (void)setupAL {
@@ -96,7 +108,10 @@ typedef enum GAMESTATE
 
     @synchronized(GlGameLock) {
 
-        [_ground tearDownGL];
+        for(GlBasePresentee *tee in self.presentees)
+        {
+            [tee tearDownGL];
+        }
     }
 }
 
@@ -136,9 +151,18 @@ typedef enum GAMESTATE
             [_ground setPlayerPos:ZERO_VECTOR3];
             [_ground updateWithTimeSinceLastUpdate:timeSinceLastUpdate];
         }
-        
-        [_background setPos:ZERO_VECTOR3];
-        [_background updateWithTimeSinceLastUpdate:timeSinceLastUpdate];
+
+        if(_background) {
+            [_background setPos:ZERO_VECTOR3];
+            [_background updateWithTimeSinceLastUpdate:timeSinceLastUpdate];
+        }
+
+        if(_player) {
+            [_player setPlayerPos:ZERO_VECTOR3 Ang:0 M:0];
+            [_player updateWithTimeSinceLastUpdate:timeSinceLastUpdate];
+            
+            [self updateBaseViewMatrix:&_baseModelViewMatrix withTgtPos:_player.position andAng:_player.angle];
+        }
     }
 }
 

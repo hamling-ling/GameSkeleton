@@ -1,6 +1,6 @@
 //
 //  HomeViewController.m
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by nobu on 13/05/13.
 //  Copyright (c) 2013年 Nobuhiro Kuroiwa. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "GlGamePresenter.h"
+#import "GameViewController.h"
 
 @interface HomeViewController ()
 
@@ -34,6 +35,23 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    [self tearDownGameViewController];
+    
+    UIViewController* viewCon = (UIViewController*)[segue destinationViewController];
+    if([viewCon isKindOfClass:[GameViewController class]])
+    {
+        NSString* strIdentifier = [segue identifier];
+        if([strIdentifier isEqualToString:@"HomeToGame"])
+        {
+            [(GameViewController*)viewCon setStage:1];
+        }
+    }
+    
+    [super prepareForSegue:segue sender:sender];
 }
 
 - (void)setupGameViewController {

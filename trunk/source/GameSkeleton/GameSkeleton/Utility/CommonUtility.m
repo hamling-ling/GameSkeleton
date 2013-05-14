@@ -1,6 +1,6 @@
 //
 //  CommonUtility.m
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwaon 12/03/21.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.

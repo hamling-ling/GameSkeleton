@@ -1,6 +1,6 @@
 //
 //  BaseGameViewController.m
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwa on 12/06/20.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  GlModel3.h
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwa on 12/03/11.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.

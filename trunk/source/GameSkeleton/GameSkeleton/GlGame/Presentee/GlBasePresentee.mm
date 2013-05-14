@@ -1,6 +1,6 @@
 //
 //  GlBasePresentee.mm
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwa on 12/03/21.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
@@ -11,7 +11,7 @@
 #import "DiagnosticTool.h"
 
 #define HITMARGIN 12.0
-#define IS_NEIBOR(a,b)  (((b-HITMARGIN) <= (a)) && ((a) <= (b+HITMARGIN)))
+#define IS_NEIGHBOR(a,b)  (((b-HITMARGIN) <= (a)) && ((a) <= (b+HITMARGIN)))
 
 @interface GlBasePresentee() {
     
@@ -132,7 +132,7 @@
     GLKVector3 p = GLKMathProject(ZERO_VECTOR3, *pModeViewMat, *pProj, viewPort);
     CGPoint cgp = [self toDip:&p viewportPtr:viewPort sizePtr:pSz];
     
-    BOOL isHit = IS_NEIBOR(cgp.x, pPt->x) && IS_NEIBOR(cgp.y, pPt->y);
+    BOOL isHit = IS_NEIGHBOR(cgp.x, pPt->x) && IS_NEIGHBOR(cgp.y, pPt->y);
     return isHit;
 }
 

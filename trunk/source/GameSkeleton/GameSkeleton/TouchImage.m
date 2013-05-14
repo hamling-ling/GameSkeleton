@@ -1,6 +1,6 @@
 //
 //  TouchImage.h
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwa on 12/07/16.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
@@ -32,9 +32,9 @@
 
 - (void)setPos:(CGPoint)pos {
 
-    if(state == TOUCHIMG_STATE_UNSET) {
+    if(state == TOUCH_STATE_UNSET) {
         self.hidden = NO;
-        state = TOUCHIMG_STATE_SET;
+        state = TOUCH_STATE_SET;
     }
     else {
         return;
@@ -52,7 +52,7 @@
 }
 
 - (void)touched {
-    state = TOUCHIMG_STATE_TOUCHED;
+    state = TOUCH_STATE_TOUCHED;
     [self inActivate];
 }
 

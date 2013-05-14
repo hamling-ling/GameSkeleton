@@ -1,6 +1,6 @@
 //
 //  TouchImage.h
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwa on 12/07/16.
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
@@ -12,10 +12,10 @@
 #define CGPointSubraction(a,b)	(CGPointMake(a.x - b.x, a.y - b.y))
 #define CGPointAddition(a,b)	(CGPointMake(a.x + b.x, a.y + b.y))
 
-typedef enum TOUCHIMG_STATE {
-	TOUCHIMG_STATE_UNSET,
-	TOUCHIMG_STATE_SET,
-	TOUCHIMG_STATE_TOUCHED
+typedef enum TOUCH_STATE {
+	TOUCH_STATE_UNSET,
+	TOUCH_STATE_SET,
+	TOUCH_STATE_TOUCHED
 } TouchImageState;
 
 @interface TouchImage : ClickableImageView {

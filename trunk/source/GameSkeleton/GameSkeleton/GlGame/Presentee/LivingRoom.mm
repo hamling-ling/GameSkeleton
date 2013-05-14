@@ -1,6 +1,6 @@
 //
 //  LivingRoom.m
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwa on 12/04/20.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "LivingRoom.h"
 #import "CommonUtility.h"
-#import "Vertex_Mtn.h"
+#import "Vertex_Bg.h"
 
 #define TEXTURE_NAME_LRM    @"room"
 

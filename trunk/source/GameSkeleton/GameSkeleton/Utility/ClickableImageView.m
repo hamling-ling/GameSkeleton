@@ -1,6 +1,6 @@
 //
 //  ClickableImageView.m
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwa on 10/08/17.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.

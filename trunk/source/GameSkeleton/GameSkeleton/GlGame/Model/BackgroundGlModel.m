@@ -1,6 +1,6 @@
 //
 //  MountainGlModel.m
-//  GameSkelton
+//  GameSkeleton
 //
 //  Created by Nobuhiro Kuroiwa on 12/04/20.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "BackgroundGlModel.h"
 #import "CommonUtility.h"
-#import "Vertex_Mtn.h"
+#import "Vertex_Bg.h"
 
 #define SCALE_FACTOR_XZ  40.0
 #define SCALE_FACTOR_Y   40.0
