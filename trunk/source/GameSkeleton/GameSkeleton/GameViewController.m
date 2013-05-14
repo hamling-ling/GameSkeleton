@@ -124,4 +124,18 @@
     lblBonus.text = [NSString stringWithFormat:@"%d", _theGame.bonus];
 }
 
+#pragma mark -  Interaction Event Handler
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [_theGame touchesBegan:touches proj:&_projectionMatrix view:self.view];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [_theGame touchesMoved:touches proj:&_projectionMatrix view:self.view];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [_theGame touchesEnded:touches proj:&_projectionMatrix];
+}
+
 @end

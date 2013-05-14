@@ -6,8 +6,8 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "LivingRoom.h"
+#import "Background.h"
 
-@interface DemoBackground : LivingRoom
+@interface DemoBackground : Background
 
 @end

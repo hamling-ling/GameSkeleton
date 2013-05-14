@@ -8,11 +8,14 @@
 
 #import "DemoBackground.h"
 #import "CommonUtility.h"
+#import "Vertex_Bg.h"
+
+#define TEXTURE_NAME_MTN    @"alps"
 
 @implementation DemoBackground
 
 - (id)init {
-    self = [super init];
+    self = [super initWithVertex:BgVertexData ofSize:sizeof(BgVertexData) andTexName:TEXTURE_NAME_MTN];
     [CommonUtility nilToFail:self reason:@"super of DemoBackground init failed"];
 
     // overrite

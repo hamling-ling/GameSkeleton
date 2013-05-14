@@ -45,6 +45,7 @@
 		310A9506174134E600E1ACC2 /* ClickableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 310A94EB174134E600E1ACC2 /* ClickableImageView.m */; };
 		310A9507174134E600E1ACC2 /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 310A94ED174134E600E1ACC2 /* CommonUtility.m */; };
 		310A9508174134E600E1ACC2 /* DiagnosticTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 310A94EF174134E600E1ACC2 /* DiagnosticTool.m */; };
+		31B696BE1742972F00D13130 /* alps.png in Resources */ = {isa = PBXBuildFile; fileRef = 31B696BD1742972F00D13130 /* alps.png */; };
 		31E3FA2B174277B000744B65 /* DemoBackground.mm in Sources */ = {isa = PBXBuildFile; fileRef = 31E3FA28174277B000744B65 /* DemoBackground.mm */; };
 		31E3FA2C174277B000744B65 /* DemoPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 31E3FA2A174277B000744B65 /* DemoPlayer.mm */; };
 		31E3FA2F174278E200744B65 /* Player.mm in Sources */ = {isa = PBXBuildFile; fileRef = 31E3FA2E174278E200744B65 /* Player.mm */; };
@@ -119,6 +120,7 @@
 		310A94ED174134E600E1ACC2 /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
 		310A94EE174134E600E1ACC2 /* DiagnosticTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiagnosticTool.h; sourceTree = "<group>"; };
 		310A94EF174134E600E1ACC2 /* DiagnosticTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiagnosticTool.m; sourceTree = "<group>"; };
+		31B696BD1742972F00D13130 /* alps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alps.png; sourceTree = "<group>"; };
 		31E3FA27174277B000744B65 /* DemoBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBackground.h; sourceTree = "<group>"; };
 		31E3FA28174277B000744B65 /* DemoBackground.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DemoBackground.mm; sourceTree = "<group>"; };
 		31E3FA29174277B000744B65 /* DemoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoPlayer.h; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		310A94CA174134E600E1ACC2 /* Texture */ = {
 			isa = PBXGroup;
 			children = (
+				31B696BD1742972F00D13130 /* alps.png */,
 				31E3FA3A17427E6000744B65 /* pyramid.png */,
 				310A94CB174134E600E1ACC2 /* ground_pine.png */,
 				310A94CC174134E600E1ACC2 /* room.png */,
@@ -411,6 +414,7 @@
 				310A94FA174134E600E1ACC2 /* room.png in Resources */,
 				310A9503174134E600E1ACC2 /* delete.png in Resources */,
 				31E3FA3B17427E6000744B65 /* pyramid.png in Resources */,
+				31B696BE1742972F00D13130 /* alps.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

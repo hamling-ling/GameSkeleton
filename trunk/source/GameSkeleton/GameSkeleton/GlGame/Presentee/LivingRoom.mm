@@ -19,9 +19,9 @@
 @implementation LivingRoom
 
 - (id)init {
-    self = [super initWithVertex:MtnVertexData ofSize:sizeof(MtnVertexData) andTexName:TEXTURE_NAME_LRM];
+    self = [super initWithVertex:BgVertexData ofSize:sizeof(BgVertexData) andTexName:TEXTURE_NAME_LRM];
     [CommonUtility nilToFail:self reason:@"super of LivingRoom init failed"];
-
+    
     return self;
 }
 

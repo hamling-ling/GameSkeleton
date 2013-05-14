@@ -11,6 +11,7 @@
 #import "CommonUtility.h"
 #import "GroundPine.h"
 #import "LivingRoom.h"
+#import "DemoBackground.h"
 #import "Player.h"
 #import "DemoPlayer.h"
 #include <vector>
@@ -76,8 +77,10 @@ typedef enum GAMESTATE
     NSMutableArray* arr = [NSMutableArray arrayWithObjects: nil];
     if(_stage == 0) {
         _ground = [[GroundPine alloc] init];
-        _background = [[LivingRoom alloc] init];
+        _background = [[DemoBackground alloc] init];
         _player = [[DemoPlayer alloc] init];
+        _player.isVisible = NO;
+        [_ground setAltitude:-3];
     }
     else {
         _ground = [[GroundPine alloc] init];
@@ -116,6 +119,7 @@ typedef enum GAMESTATE
 }
 
 - (void)touchesBegan:(NSSet *)touches proj:(const GLKMatrix4*)pProj view:(UIView*)view {
+    [_player touchesBegan:touches proj:pProj view:view];
 }
 
 - (void)touchesMoved:(NSSet *)touches proj:(const GLKMatrix4*)pProj view:(UIView*)view {
@@ -124,6 +128,7 @@ typedef enum GAMESTATE
 }
 
 - (void)touchesEnded:(NSSet *)touches proj:(const GLKMatrix4*)pProj {
+    [_player touchesEnded:touches proj:pProj];
 }
 
 - (void)updateBaseViewMatrix:(GLKMatrix4*)pMat withTgtPos:(GLKVector3)pos andAng:(GLfloat)ang {
