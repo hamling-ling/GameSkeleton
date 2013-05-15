@@ -125,7 +125,7 @@
                 if (m.isAlphaEnabled) {
                     if(!glIsEnabled(GL_BLEND)) {
                         glEnable(GL_BLEND);
-                        glBlendFunc(GL_ONE, GL_ONE);
+                        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
                     }
                 }
                 else {
@@ -149,7 +149,7 @@
                 
                 GLKVector4 exColor = m.extraColor;
                 glUniform4f(uniforms[UNIFORM_COLOREX], exColor.r, exColor.g, exColor.b, exColor.a);
-                glUniform1f(uniforms[UNIFORM_COLORAMB], m.ambientStrength);
+                glUniform1f(uniforms[UNIFORM_ALPHA], m.alpha);
                 
                 glDrawArrays(GL_TRIANGLES, 0, [m triangleNum]);
                 glBindTexture(GL_TEXTURE_2D, 0);
@@ -167,7 +167,7 @@
     uniforms[UNIFORM_NORMAL_MATRIX] = glGetUniformLocation(_program, "normalMatrix");
     uniforms[UNIFORM_TEXTURE_SAMPLER] = glGetUniformLocation(_program, "Texture");
     uniforms[UNIFORM_COLOREX] = glGetUniformLocation(_program, "colorEx");
-    uniforms[UNIFORM_COLORAMB] = glGetUniformLocation(_program, "colorAmb");
+    uniforms[UNIFORM_ALPHA] = glGetUniformLocation(_program, "alphafactor");
 }
 
 - (BOOL)loadShaders

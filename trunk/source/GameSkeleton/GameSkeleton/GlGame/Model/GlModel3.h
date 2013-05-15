@@ -22,9 +22,6 @@ extern const GLKVector3 AXIS_mX;
 extern const GLKVector3 AXIS_mY;
 extern const GLKVector3 AXIS_mZ;
 
-extern const GLfloat AMBIENT_ACTIVE;
-extern const GLfloat AMBIENT_INACTIVE;
-
 @interface GlModel3 : NSObject {
 
     NSString* _texFileName;
@@ -52,7 +49,7 @@ extern const GLfloat AMBIENT_INACTIVE;
 }
 
 @property (nonatomic, readwrite) GLKVector4 extraColor;
-@property (nonatomic, readwrite) GLfloat ambientStrength;
+@property (nonatomic, readwrite) GLfloat alpha;
 @property (nonatomic, readonly) GLfloat rotation;
 @property (nonatomic, readonly) GLKVector3 rotationCenter;
 @property (nonatomic, readonly) GLfloat frameRotation;

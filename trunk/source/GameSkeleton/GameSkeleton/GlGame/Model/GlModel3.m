@@ -21,13 +21,10 @@ const GLKVector3 AXIS_mX = {-1.0, 0.0, 0.0};
 const GLKVector3 AXIS_mY = {0.0, -1.0, 0.0};
 const GLKVector3 AXIS_mZ = {0.0, 0.0, -1.0};
 
-const GLfloat AMBIENT_ACTIVE = 0.85;
-const GLfloat AMBIENT_INACTIVE = 0.45;
-
 @implementation GlModel3
 
 @synthesize extraColor;
-@synthesize ambientStrength;
+@synthesize alpha;
 @synthesize rotationCenter;
 @synthesize rotation;
 @synthesize frameRotation;
@@ -45,7 +42,7 @@ const GLfloat AMBIENT_INACTIVE = 0.45;
     _dataSize = size;
     _texFileName = pngName;
     extraColor = ZERO_VECTOR4;
-    ambientStrength = AMBIENT_ACTIVE;
+    alpha = 1.0;
     rotation = 0.0;
     position = ZERO_VECTOR3;
     rotationCenter = ZERO_VECTOR3;

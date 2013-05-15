@@ -29,7 +29,7 @@ const GLKVector4 EXTRA_COLOR_INACTIVE = {0.0, 0.0, 0.0, 0.0};
 
     _model = [[StandingAlphaGlModel alloc]
                  initWithVertex:PyrVertexData ofSize:sizeof(PyrVertexData) texPng:TEXTURE_NAME_PYR];
-
+    _model.alpha = 1.;
     self.models = [NSArray arrayWithObjects:_model, nil];
 
     return self;
@@ -59,8 +59,7 @@ const GLKVector4 EXTRA_COLOR_INACTIVE = {0.0, 0.0, 0.0, 0.0};
         
         if ([self isBoxHit:&pt model:_model proj:pProj viewSize:&viewSize]) {
             _model.extraColor = EXTRA_COLOR_ACTIVE;
-            _model.ambientStrength = AMBIENT_ACTIVE;
-            
+            _model.alpha = 0.25;
             continue;
         }
     }
@@ -72,7 +71,7 @@ const GLKVector4 EXTRA_COLOR_INACTIVE = {0.0, 0.0, 0.0, 0.0};
 - (void)touchesEnded:(NSSet *)touches proj:(const GLKMatrix4*)pProj{
     
     _model.extraColor = EXTRA_COLOR_INACTIVE;
-    _model.ambientStrength = AMBIENT_INACTIVE;
+    _model.alpha = 1.;
 }
 
 
