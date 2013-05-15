@@ -47,10 +47,9 @@
     NSAssert(_state == GAMEVIEWSTATE_UNINIT, @"invalid operation");
     
     _state = GAMEVIEWSTATE_INITIALIZING;
-    [CommonUtility addEvtHandlerFor:self Name:EVT_PLAY_START Sel:@selector(skiStarted:)];
-    [CommonUtility addEvtHandlerFor:self Name:EVT_PLAY_GOAL Sel:@selector(skiGoaled:)];
-    [CommonUtility addEvtHandlerFor:self Name:EVT_PLAY_POINT_EARNED Sel:@selector(skiPointEarned:)];
-    [CommonUtility addEvtHandlerFor:self Name:EVT_PLAY_WORN Sel:@selector(skiWorn:)];
+    [CommonUtility addEvtHandlerFor:self Name:EVT_PLAY_START Sel:@selector(gameStarted:)];
+    [CommonUtility addEvtHandlerFor:self Name:EVT_PLAY_GOAL Sel:@selector(gameGoaled:)];
+    [CommonUtility addEvtHandlerFor:self Name:EVT_PLAY_POINT_EARNED Sel:@selector(gamePointEarned:)];
     
     [self setupGL];
     
@@ -63,7 +62,6 @@
     [CommonUtility rmvEvtHandlerFor:self Name:EVT_PLAY_START];
     [CommonUtility rmvEvtHandlerFor:self Name:EVT_PLAY_GOAL];
     [CommonUtility rmvEvtHandlerFor:self Name:EVT_PLAY_POINT_EARNED];
-    [CommonUtility rmvEvtHandlerFor:self Name:EVT_PLAY_WORN];
     
     [self tearDownGL];
     [self setLblTime:nil];
@@ -136,6 +134,18 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [_theGame touchesEnded:touches proj:&_projectionMatrix];
+}
+
+- (void)gameStarted:(NSNotification*)note {
+    LOG(@"Started");
+}
+
+- (void)gameGoaled:(NSNotification*)note {
+    LOG(@"Goaled");
+}
+
+- (void)gamePointEarned:(NSNotification*)note {
+    LOG(@"PointEarned");
 }
 
 @end

@@ -14,6 +14,7 @@
 #import "DemoBackground.h"
 #import "Player.h"
 #import "DemoPlayer.h"
+#import "TimeKeeper.h"
 #include <vector>
 
 const NSString* GlGameLock = @"GlGameLock";
@@ -42,7 +43,7 @@ typedef enum GAMESTATE
     GLKMatrix4 _baseModelViewMatrix;
     
     GameState _gameState;
-    //TimeKeeper *_timeKeeper;
+    TimeKeeper *_timeKeeper;
 }
 
 @property (nonatomic, readwrite, strong) NSArray* presentees;
@@ -59,8 +60,12 @@ typedef enum GAMESTATE
 
 - (id)init {
     self = [super init];
-    [CommonUtility nilToFail:self reason:@"super of GlGamePresenter init failed"];
 
+    [CommonUtility nilToFail:self reason:@"super of GlGamePresenter init failed"];
+    [CommonUtility addEvtHandlerFor:self Name:EVT_PLAYER_FIRST_TOUCHED Sel:@selector(playerFirstTouched:)];
+    [CommonUtility addEvtHandlerFor:self Name:EVT_PLAYER_READY_TO_GO Sel:@selector(playerReadyToGo:)];
+
+    _timeKeeper = [[TimeKeeper alloc] init];
     _gameState = IDLE;
 
     time = 0.0;
@@ -111,6 +116,9 @@ typedef enum GAMESTATE
 
     @synchronized(GlGameLock) {
 
+        [CommonUtility rmvEvtHandlerFor:self Name:EVT_PLAYER_FIRST_TOUCHED];
+        [CommonUtility rmvEvtHandlerFor:self Name:EVT_PLAYER_READY_TO_GO];
+        
         for(GlBasePresentee *tee in self.presentees)
         {
             [tee tearDownGL];
@@ -168,6 +176,27 @@ typedef enum GAMESTATE
             
             [self updateBaseViewMatrix:&_baseModelViewMatrix withTgtPos:_player.position andAng:_player.angle];
         }
+        
+        if (PLAYING == _gameState) {
+            time = _timeKeeper.time;
+        }
+    }
+}
+
+- (void)playerFirstTouched:(NSNotification*)note {
+    
+    NSNumber *isLeft = (NSNumber*)[note object];
+    if (isLeft == nil)
+        return;
+}
+
+- (void)playerReadyToGo:(NSNotification*)note {
+    
+    @synchronized(GlGameLock) {
+        
+        _gameState = PLAYING;
+        time = [_timeKeeper start];
+        [CommonUtility asyncNotifyEvt:EVT_PLAY_START obj:nil];
     }
 }
 

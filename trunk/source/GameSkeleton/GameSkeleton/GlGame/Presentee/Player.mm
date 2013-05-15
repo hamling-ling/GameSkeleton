@@ -18,6 +18,7 @@ const GLKVector4 EXTRA_COLOR_INACTIVE = {0.0, 0.0, 0.0, 0.0};
 
 @interface Player() {
     StandingAlphaGlModel *_model;
+    BOOL _isTouchedEver;
 }
 @end
 
@@ -60,7 +61,9 @@ const GLKVector4 EXTRA_COLOR_INACTIVE = {0.0, 0.0, 0.0, 0.0};
         if ([self isBoxHit:&pt model:_model proj:pProj viewSize:&viewSize]) {
             _model.extraColor = EXTRA_COLOR_ACTIVE;
             _model.alpha = 0.25;
-            continue;
+            if(!_isTouchedEver)
+                [CommonUtility asyncNotifyEvt:EVT_PLAYER_FIRST_TOUCHED obj:[NSNumber numberWithBool:NO]];
+            break;
         }
     }
 }
@@ -72,6 +75,10 @@ const GLKVector4 EXTRA_COLOR_INACTIVE = {0.0, 0.0, 0.0, 0.0};
     
     _model.extraColor = EXTRA_COLOR_INACTIVE;
     _model.alpha = 1.;
+    if(!_isTouchedEver) {
+        _isTouchedEver = YES;
+        [CommonUtility asyncNotifyEvt:EVT_PLAYER_READY_TO_GO obj:nil];
+    }
 }
 
 

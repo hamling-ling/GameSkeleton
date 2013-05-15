@@ -15,7 +15,6 @@ extern const NSString* GlGameLock;
 #define EVT_PLAY_START           @"PlayStartedEvent"
 #define EVT_PLAY_GOAL            @"PLayGoaledEvent"
 #define EVT_PLAY_POINT_EARNED    @"PlayPointEarnedEvent"
-#define EVT_PLAY_WORN            @"PlayPointWornEvent"
 
 @interface GlGamePresenter : NSObject
 
