@@ -142,6 +142,7 @@
 
 - (void)gameGoaled:(NSNotification*)note {
     LOG(@"Goaled");
+    lblStatus.text = @"GOAL";
 }
 
 - (void)gamePointEarned:(NSNotification*)note {

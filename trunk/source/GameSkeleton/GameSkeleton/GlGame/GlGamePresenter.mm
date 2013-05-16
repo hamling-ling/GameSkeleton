@@ -179,6 +179,10 @@ typedef enum GAMESTATE
         
         if (PLAYING == _gameState) {
             time = _timeKeeper.time;
+            if(time > 10.0) {
+                _gameState = FINISHED;
+                [CommonUtility asyncNotifyEvt:EVT_PLAY_GOAL obj:nil];
+            }
         }
     }
 }
